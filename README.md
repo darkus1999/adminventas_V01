@@ -56,13 +56,13 @@ el proyecto esta funcionando con las versiones señaladas al costado de los requ
 
 ## DEPENDENCIAS USADAS
 
-*   [axios]: v0.17
-*   [bootstrap-sass]: v3.3.7
-*   [jquery]: v3.2
-*   [laravel-echo]: v1.4.0
-*   [pusher-js]: v4.3.1
-*   [vue-barcode]: v1.1.0
-*   [vue-select]: v2.5.0
+*   [axios](): v0.17
+*   [bootstrap-sass](): v3.3.7
+*   [jquery](): v3.2
+*   [laravel-echo](): v1.4.0
+*   [pusher-js](): v4.3.1
+*   [vue-barcode](): v1.1.0
+*   [vue-select](): v2.5.0
 
 ## LICENCIA
 
