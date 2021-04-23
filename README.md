@@ -5,7 +5,12 @@
 
 **Descripcion**:
 
-El siguiente sistema de restaurante a sido desarrollado con [Laravel](https://laravel.com/docs/8.x/installation) y [vue.js](https://vuejs.org/), a sido pensado con fines educativos, prohivida su venta 
+El siguiente sistema de restaurante a sido desarrollado con [Laravel](https://laravel.com/docs/8.x/installation) y [vue.js](https://vuejs.org/), a sido pensado con fines educativos, prohivida su venta.
+
+**Admin por defecto**
+
+1. Uusario: frank
+2. password: password
 
 **Requesitos para iniciar el proyecto**:
 
