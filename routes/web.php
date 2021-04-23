@@ -10,10 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', 'IndexController@showIndex');
+//LOGIN ADMIN
 Route::group(['middleware'=>['guest']],function(){
-    Route::get('/','Auth\LoginController@showLoginForm');
-    Route::post('/', 'Auth\LoginController@login')->name('login');
+    Route::get('/admin','Auth\LoginController@showLoginForm');
+    Route::post('/admin', 'Auth\LoginController@login')->name('login');
 });
 
 Route::group(['middleware'=>['auth']],function(){
@@ -62,6 +63,7 @@ Route::group(['middleware'=>['auth']],function(){
         Route::post('/cliente/registrar', 'ClienteController@store');
         Route::put('/cliente/actualizar', 'ClienteController@update');
         Route::get('/cliente/selectCliente', 'ClienteController@selectCliente');
+        Route::get('/cliente/selectClienteId', 'ClienteController@selectClienteId');
 
         Route::get('/articulo/buscarArticuloVenta', 'ArticuloController@buscarArticuloVenta');
         Route::get('/articulo/listarArticuloVenta', 'ArticuloController@listarArticuloVenta');
@@ -109,6 +111,7 @@ Route::group(['middleware'=>['auth']],function(){
         Route::put('/venta/desactivar', 'VentaController@desactivar');
         Route::get('/venta/obtenerCabecera', 'VentaController@obtenerCabecera');
         Route::get('/venta/obtenerDetalles', 'VentaController@obtenerDetalles');
+        Route::get('/venta/listarPdf', 'VentaController@listarPdf')->name('ventas_pdf');
         Route::get('/venta/pdf/{id}', 'VentaController@pdf')->name('venta_pdf');
 
         Route::get('/rol', 'RolController@index');
@@ -125,6 +128,27 @@ Route::group(['middleware'=>['auth']],function(){
         Route::put('/ingreso/desactivar', 'IngresoController@desactivar');
         Route::get('/ingreso/obtenerCabecera', 'IngresoController@obtenerCabecera');
         Route::get('/ingreso/obtenerDetalles', 'IngresoController@obtenerDetalles');
+
+        Route::get('/mesa', 'MesaController@view');
+        Route::post('/mesa/create','MesaController@create');
+        Route::put('/mesa/update','MesaController@update');
+        Route::put('/mesa/delete','MesaController@delete');
+        Route::put('/mesa/active','MesaController@active');
+
+        Route::get('/pedido','PedidoController@view');
+        Route::post('/pedido/create','PedidoController@create');
+        Route::put('/pedido/update','PedidoController@update');
+        Route::put('/pedido/updateTotal','PedidoController@updateTotal');
+        Route::put('/pedido/delete','PedidoController@delete');
+        Route::put('/pedido/active','PedidoController@active');
+        Route::get('/pedido/viewCuentas','PedidoController@viewCuentas');
+
+        Route::put('/cuenta/updateIdClienteCuenta','CuentaController@updateIdClienteCuenta');
+
+        Route::get('/detallepedido','DetallePedidoController@index');
+        Route::post('/detallepedido/create','DetallePedidoController@create');
+        Route::put('/detallepedido/update','DetallePedidoController@update');
+        Route::post('/detallepedido/delete','DetallePedidoController@delete');
     });
 
 });

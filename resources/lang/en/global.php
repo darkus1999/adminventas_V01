@@ -11,6 +11,8 @@ return [
 			'submenuThree'				=>		'Categorias',
 			'submenuFour'				=>		'Productos',
 			'submenuFive'				=>		'Clientes',
+			'submenuSix'				=>		'Mesas',
+			'submenuSeven'				=>		'Pedidos',
 		],
 		'MenuTwo'						=>		[
 			'title'						=>		'Gestionar Almacen',

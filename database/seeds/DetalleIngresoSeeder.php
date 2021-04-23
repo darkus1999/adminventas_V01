@@ -30,9 +30,9 @@ class DetalleIngresoSeeder extends Seeder
     		[
     			'id'					=> 3,
     			'idingreso'				=> 3,
-    			'idarticulo'			=> 5,
-    			'cantidad'				=> 35,
-    			'precio'				=> 4.00,
+    			'idarticulo'			=> 6,
+    			'cantidad'				=> 20,
+    			'precio'				=> 5.00,
     		],
     	];
         //

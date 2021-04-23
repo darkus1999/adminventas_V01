@@ -28,6 +28,8 @@ Vue.component('dashboard', require('./components/Dashboard.vue'));
 Vue.component('consultaingreso', require('./components/ConsultaIngreso.vue'));
 Vue.component('consultaventa', require('./components/ConsultaVenta.vue'));
 Vue.component('notification', require('./components/Notification.vue'));
+Vue.component('mesa', require('./components/Mesas.vue'));
+Vue.component('pedido', require('./components/Pedidos.vue'));
 
 
 

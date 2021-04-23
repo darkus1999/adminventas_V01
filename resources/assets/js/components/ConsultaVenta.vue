@@ -9,6 +9,9 @@
                 <div class="card">
                     <div class="card-header">
                         <i class="fa fa-align-justify"></i> Ventas
+                        <button type="button" @click="reporteVenta(buscar, criterio)" class="btn btn-info">
+                            <i class="icon-doc"></i>&nbsp;Reporte
+                        </button>
                     </div>
                     <!-- Listado-->
                     <template v-if="listado==1">
@@ -342,7 +345,9 @@
                     console.log(error);
                 });
             },
-
+            reporteVenta(buscar, criterio){
+            window.open('/venta/listarPdf?buscar='+ buscar + '&criterio='+ criterio, '_blank');
+            },
         },
         mounted() {
             this.listarVenta(1,this.buscar,this.criterio);

@@ -16,7 +16,7 @@ class CreateDetalleIngresosTable extends Migration
         Schema::create('detalle_ingresos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idingreso')->unsigned();
-            $table->foreign('idingreso')->references('id')->on('ingresos')->onDelete('cascade');
+            $table->foreign('idingreso')->references('id')->on('ingresos');
             $table->integer('idarticulo')->unsigned();
             $table->foreign('idarticulo')->references('id')->on('articulos');
             $table->integer('cantidad');

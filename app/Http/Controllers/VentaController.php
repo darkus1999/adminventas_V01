@@ -98,6 +98,33 @@ class VentaController extends Controller
         return $pdf->download('Comprobante-'.$numventa[0]->num_comprobante.'.pdf');
 
     }
+    public function listarPdf(Request $request){
+        $buscar = $request->buscar;
+        $criterio = $request->criterio;
+       if ($buscar==''){
+            $ventas = Venta::join('personas','ventas.idcliente','=','personas.id')
+            ->join('users','ventas.idusuario','=','users.id')
+            ->select('ventas.id','ventas.tipo_comprobante','ventas.serie_comprobante',
+            'ventas.num_comprobante','ventas.fecha_hora','ventas.impuesto','ventas.total',
+            'ventas.estado','personas.nombre','users.usuario')
+            ->orderBy('ventas.id', 'desc')->get();
+            $cont = $ventas->count();
+        }
+        else{
+            $ventas = Venta::join('personas','ventas.idcliente','=','personas.id')
+            ->join('users','ventas.idusuario','=','users.id')
+            ->select('ventas.id','ventas.tipo_comprobante','ventas.serie_comprobante',
+            'ventas.num_comprobante','ventas.fecha_hora','ventas.impuesto','ventas.total',
+            'ventas.estado','personas.nombre','users.usuario')
+            ->where('ventas.'.$criterio, 'like', '%'. $buscar . '%')
+            ->orderBy('ventas.id', 'desc')->get();
+            $cont = $ventas->count();
+        }
+
+        $pdf = \PDF::loadView('pdf.listaventaspdf',compact('ventas','cont','buscar','criterio'))
+        ->download('Lista_de_Ventas_'.$buscar.'.pdf');
+        return $pdf;
+    }
     public function store(Request $request)
     {
         if (!$request->ajax()) return redirect('/');

@@ -44,7 +44,7 @@
             </template>
 
             <template v-if="menu==10">
-            <consultaventa></consultaventa>
+                <consultaventa></consultaventa>
             </template>
 
             <template v-if="menu==11">
@@ -54,6 +54,15 @@
             <template v-if="menu==12">
                 <h1>Acerca de</h1>
             </template>
+
+            <template v-if="menu==13">
+                <mesa></mesa>
+            </template>
+
+            <template v-if="menu==14">
+                <pedido></pedido>
+            </template>
+
             @elseif (Auth::user()->idrol == 2)
             <template v-if="menu==0">
                 <dashboard></dashboard>
@@ -96,7 +105,7 @@
                 <proveedor></proveedor>
             </template>
             <template v-if="menu==9">
-            <consultaingreso></consultaingreso>
+                <consultaingreso></consultaingreso>
             </template>
             <template v-if="menu==11">
                 <h1>Ayuda</h1>

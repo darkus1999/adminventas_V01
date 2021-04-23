@@ -47,6 +47,12 @@ class ClienteController extends Controller
         return ['clientes' => $clientes];
     }
 
+    public function selectClienteId(Request $request){
+        $id = $request->id;
+        $cliente = Persona::where('id',$id)->get();
+        return ['cliente'=>$cliente];
+    }
+
     public function store(Request $request)
     {
         if (!$request->ajax()) return redirect('/');
