@@ -9,14 +9,14 @@ El siguiente sistema de restaurante a sido desarrollado con [Laravel](https://la
 
 **Requesitos para iniciar el proyecto**:
 
-1.- Haber instalado [composer](https://getcomposer.org/) version 2.0.6
-2.- Haber instalado [node](https://nodejs.org/es/) version 15.5.1
-3.- Una vez descargado el codigo, ubicarse en la raiz del proyecto y ejecutar "npm install"
-4.- Modicicar el archivo ".env" con las credenciales de configuracion para la base de datos
-5.- Ejectutar [xampp](https://www.apachefriends.org/es/index.html) version 3.2.4, levantar Apache y mysql
-5.- Abrir una terminal en la raiz del proyecto ejecutar "php artisan migrate --seed"
-6.- Ejecutar "php artisan serve"
-7.- (Opcional) Si se quiere hacer modicifacion al fronent de Vue una vez editado todos los archivos de vue ejecutar "npm run watch" y recargar la pagina
+1. Haber instalado [composer](https://getcomposer.org/) version 2.0.6
+2. Haber instalado [node](https://nodejs.org/es/) version 15.5.1
+3. Una vez descargado el codigo, ubicarse en la raiz del proyecto y ejecutar "npm install"
+4. Modicicar el archivo ".env" con las credenciales de configuracion para la base de datos
+5. Ejectutar [xampp](https://www.apachefriends.org/es/index.html) version 3.2.4, levantar Apache y mysql
+5. Abrir una terminal en la raiz del proyecto ejecutar "php artisan migrate --seed"
+6. Ejecutar "php artisan serve"
+7. (Opcional) Si se quiere hacer modicifacion al fronent de Vue una vez editado todos los archivos de vue ejecutar "npm run watch" y recargar la pagina
 
 **Exepciones**:
 
