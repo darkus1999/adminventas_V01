@@ -5,7 +5,7 @@
 
 **Descripcion**:
 
-El siguiente sistema de restaurante a sido desarrollado con [Laravel](https://laravel.com/docs/8.x/installation) y [vue.js](https://vuejs.org/), a sido pensado con fines educativos, prohivida su venta.
+El siguiente sistema de restaurante a sido desarrollado con [Laravel](https://laravel.com/docs/8.x/installation) y [vue.js](https://vuejs.org/), a sido pensado con fines educativos, prohibida su venta.
 
 **Uusarios por defecto**
 1. Admin
