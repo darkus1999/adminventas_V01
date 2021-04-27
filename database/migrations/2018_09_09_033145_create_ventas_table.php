@@ -26,7 +26,7 @@ class CreateVentasTable extends Migration
             $table->decimal('impuesto', 4, 2);
             $table->decimal('total', 11, 2);
             $table->string('estado', 20);
-            $table->timestamps();
+            $table->timestamps();//delete_at create_at
         });
     }
  

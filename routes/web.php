@@ -58,6 +58,34 @@ Route::group(['middleware'=>['auth']],function(){
 
     });
 
+    Route::group(['middleware' => ['Mesero']], function () {
+
+        Route::get('/articulo', 'ArticuloController@index');
+        Route::get('/articulo/buscarArticulo', 'ArticuloController@buscarArticulo');
+        Route::get('/articulo/listarArticulo', 'ArticuloController@listarArticulo');
+
+        Route::get('/mesa', 'MesaController@view');
+        Route::post('/mesa/create','MesaController@create');
+        Route::put('/mesa/update','MesaController@update');
+        Route::put('/mesa/delete','MesaController@delete');
+        Route::put('/mesa/active','MesaController@active');
+
+        Route::get('/pedido','PedidoController@view');
+        Route::post('/pedido/create','PedidoController@create');
+        Route::put('/pedido/update','PedidoController@update');
+        Route::put('/pedido/updateTotal','PedidoController@updateTotal');
+        Route::put('/pedido/delete','PedidoController@delete');
+        Route::put('/pedido/active','PedidoController@active');
+        Route::get('/pedido/viewCuentas','PedidoController@viewCuentas');
+
+        Route::put('/cuenta/updateIdClienteCuenta','CuentaController@updateIdClienteCuenta');
+
+        Route::get('/detallepedido','DetallePedidoController@index');
+        Route::post('/detallepedido/create','DetallePedidoController@create');
+        Route::put('/detallepedido/update','DetallePedidoController@update');
+        Route::post('/detallepedido/delete','DetallePedidoController@delete');
+    });
+
     Route::group(['middleware' => ['Vendedor']], function () {
         Route::get('/cliente', 'ClienteController@index');
         Route::post('/cliente/registrar', 'ClienteController@store');

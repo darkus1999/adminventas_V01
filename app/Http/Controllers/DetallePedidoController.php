@@ -43,14 +43,25 @@ class DetallePedidoController extends Controller
             $data = $request->articulos;
             if (count($data)>0) {
                 foreach ($data  as $key => $value) {
-                $detallepedido= DetallePedido::findOrFail($value['id']);
-                $detallepedido->id_cuenta=$value['id_cuenta'];   
-                $detallepedido->id_usuario=$value['id_usuario'];
-                $detallepedido->id_articulo=$value['id_articulo'];  
-                $detallepedido->precio_venta=$value['precio_venta'];    
-                $detallepedido->cantidad=$value['cantidad'];    
-                $detallepedido->descuento=$value['descuento'];
-                $detallepedido->save();
+                    if (isset($value['id'])) {
+                    $detallepedido= DetallePedido::findOrFail($value['id']);
+                    $detallepedido->id_cuenta=$value['id_cuenta'];   
+                    $detallepedido->id_usuario=$value['id_usuario'];
+                    $detallepedido->id_articulo=$value['id_articulo'];  
+                    $detallepedido->precio_venta=$value['precio_venta'];    
+                    $detallepedido->cantidad=$value['cantidad'];    
+                    $detallepedido->descuento=$value['descuento'];
+                    $detallepedido->save();
+                    }else{
+                        $detallepedido= new DetallePedido;
+                        $detallepedido->id_cuenta=$request->id_cuenta;   
+                        $detallepedido->id_usuario=$request->id_usuario;
+                        $detallepedido->id_articulo=$value['idarticulo'];  
+                        $detallepedido->precio_venta=$value['precio_venta'];    
+                        $detallepedido->cantidad=$value['cantidad'];    
+                        $detallepedido->descuento=$value['descuento'];
+                        $detallepedido->save();
+                    }
                 }
             }
             DB::commit();

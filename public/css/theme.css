@@ -1654,10 +1654,10 @@ textarea {
     bottom: 0;
     display: block;
     left: 0;
-    position: fixed;
     right: 0;
     text-align: center;
     top: 0;
+    position: fixed;
     z-index: 9999;
 }
 

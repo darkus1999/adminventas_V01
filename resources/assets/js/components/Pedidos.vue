@@ -207,7 +207,7 @@
                     <div class="form-group row">
                         <div class="col-md-12">
                             <button type="button" @click="ocultarVista('detalle')" class="btn btn-secondary">Cerrar</button>
-                            <button type="button" class="btn btn-primary" @click="createDetallePedido()" :disabled="dataclientebyid.length!=0?true:false">Registrar Pedido</button>
+                            <button type="button" class="btn btn-primary" @click="createDetallePedido(arrayDetalle)" :disabled="dataclientebyid.length!=0?true:false">Registrar Pedido</button>
                             <button type="button" class="btn btn-warning" @click="updateDetallePedido()":disabled="dataclientebyid.length!=0?false:true">Actualizar Pedido</button>
                         </div>
                     </div>
@@ -682,6 +682,7 @@
                 inputValidator: (value) => {
                     return new Promise((resolve) => {
                       if (value != '') {
+                        console.log(value);
                         resolve()
                       } else {
                         resolve('Error en la seleccion')
@@ -753,7 +754,7 @@
                 this.listado=1;
                 this.id_pedido=pedidoId;
                 this.id_cuenta=id_cuenta;
-                this.listarDetallePedido(id_cuenta);       
+                this.listarDetallePedido(id_cuenta);      
             },
             listarDetallePedido(id_cuenta){
                 let me=this;
@@ -761,14 +762,14 @@
                 axios.get(url).then(function (response) {
                     var respuesta= response.data;
                     me.arrayDetalle = respuesta.detallepedido;
-                    me.idcliente = respuesta.detallepedido[0].id_usuario;
+                    me.idcliente = me.arrayDetalle[0].id_usuario;
                     me.getDatosClienteId(me.idcliente);
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
             },
-            createDetallePedido(){
+            createDetallePedido(array){
                 let me = this;
                 if (me.idcliente==null) {
                     swal({
@@ -780,7 +781,7 @@
                     axios.post('/detallepedido/create',{
                     'id_cuenta': me.id_cuenta,      
                     'id_usuario':me.idcliente,  
-                    'articulos': me.arrayDetalle, 
+                    'articulos': array, 
                     }).then(function (response) {
                         me.dataclientebyid=[];
                         me.updateTotalPedido(me.id, me.totalA);
@@ -794,8 +795,10 @@
             },
             updateDetallePedido(){
                     let me = this;
-                    axios.put('/detallepedido/update',{      
-                    'articulos': me.arrayDetalle, 
+                    axios.put('/detallepedido/update',{ 
+                    'id_cuenta': me.id_cuenta,      
+                    'id_usuario':me.dataclientebyid.id,      
+                    'articulos': me.arrayDetalle 
                     }).then(function (response) {
                         me.updateTotalPedido(me.id, me.totalA);
                         me.updateCuentaUsuario(me.id_cuenta,me.dataclientebyid.id);

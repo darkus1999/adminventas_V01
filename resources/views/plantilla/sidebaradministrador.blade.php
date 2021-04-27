@@ -41,11 +41,6 @@
                                     {{ trans('global.sidebar.MenuOne.submenuSix') }} 
                                 </a>
                             </li>
-                            <li @click="menu=14" class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa fa-tag"></i> 
-                                    {{ trans('global.sidebar.MenuOne.submenuSeven') }} 
-                                </a>
-                            </li>
                         </ul>
                     </li>
                     <!--ALMACEN-->

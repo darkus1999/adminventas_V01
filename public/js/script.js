@@ -288,3 +288,6 @@ equalheight = function(container) {
         }
     });
 }
+/*MOSTRAR EL CONTENIDO DEL INDEX DEL CLIENTE*/
+$(".wrapper").show("slow");
+

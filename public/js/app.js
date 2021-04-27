@@ -73293,6 +73293,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 inputValidator: function inputValidator(value) {
                     return new Promise(function (resolve) {
                         if (value != '') {
+                            console.log(value);
                             resolve();
                         } else {
                             resolve('Error en la seleccion');
@@ -73366,13 +73367,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.get(url).then(function (response) {
                 var respuesta = response.data;
                 me.arrayDetalle = respuesta.detallepedido;
-                me.idcliente = respuesta.detallepedido[0].id_usuario;
+                me.idcliente = me.arrayDetalle[0].id_usuario;
                 me.getDatosClienteId(me.idcliente);
             }).catch(function (error) {
                 console.log(error);
             });
         },
-        createDetallePedido: function createDetallePedido() {
+        createDetallePedido: function createDetallePedido(array) {
             var me = this;
             if (me.idcliente == null) {
                 swal({
@@ -73384,7 +73385,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 axios.post('/detallepedido/create', {
                     'id_cuenta': me.id_cuenta,
                     'id_usuario': me.idcliente,
-                    'articulos': me.arrayDetalle
+                    'articulos': array
                 }).then(function (response) {
                     me.dataclientebyid = [];
                     me.updateTotalPedido(me.id, me.totalA);
@@ -73399,6 +73400,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         updateDetallePedido: function updateDetallePedido() {
             var me = this;
             axios.put('/detallepedido/update', {
+                'id_cuenta': me.id_cuenta,
+                'id_usuario': me.dataclientebyid.id,
                 'articulos': me.arrayDetalle
             }).then(function (response) {
                 me.updateTotalPedido(me.id, me.totalA);
@@ -74298,7 +74301,7 @@ var render = function() {
                           },
                           on: {
                             click: function($event) {
-                              _vm.createDetallePedido()
+                              _vm.createDetallePedido(_vm.arrayDetalle)
                             }
                           }
                         },

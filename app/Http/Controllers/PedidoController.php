@@ -14,7 +14,7 @@ class PedidoController extends Controller
         $criterio = $request->criterio;
 
         if ($buscar==''){
-        $pedidos = Pedido::select('Pedidos.*','Users.usuario')->join('Users','Pedidos.id_usuario','=','Users.id')
+        $pedidos = Pedido::select('pedidos.*','users.usuario')->join('users','pedidos.id_usuario','=','users.id')
         ->orderBy('id_pedido','asc')->paginate(3);
         }else{
         $pedidos = Pedido::select('*')

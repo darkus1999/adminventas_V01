@@ -17,11 +17,12 @@ return [
 		'MenuTwo'						=>		[
 			'title'						=>		'Gestionar Almacen',
 			'submenuOne'				=>		'Ingresos',
-			'submenuTwo'				=>		'Proveedores'
+			'submenuTwo'				=>		'Registrar Proveedores',
+			'submenuThree'				=>		'Registrar Comprobantes de compra'
 		],
 		'MenuThree'						=>		[
 			'title'						=>		'Gestionar Ventas',
-			'submenuOne'				=>		'Ventas'
+			'submenuOne'				=>		'Registrar Ventas'
 		],
 		'MenuFour'						=>		[
 			'title'						=>		'Administrar Consulta',
@@ -29,7 +30,11 @@ return [
 			'submenuTwo'				=>		'Ventas'
 		],
 		'MenuFive'						=>		'Ayuda',
-		'MenuSix'						=>		'Acerca de ..',			
+		'MenuSix'						=>		'Acerca de ..',	
+		'MenuSeven'						=>		[
+			'title'						=>		'Gestionar Pedidos',
+			'submenuOne'				=>		'Registrar Pedidos',
+		],		
 	],
 	'año'								=>		'2021',
 	'version'							=>		'Version 0.0.4'

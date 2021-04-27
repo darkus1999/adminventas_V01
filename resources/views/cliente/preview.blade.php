@@ -4,11 +4,11 @@
         <div id="pre-loader">
             <div class="loader-holder">
                 <div class="frame">
-                    <img alt="Laboom" src="img/preview/Preloader.gif"/>
+                    <img alt="Laboom" src="{{ asset('img/preview/Preloader.gif') }}"/>
                 </div>
             </div>
         </div>
-        <div class="wrapper">
+        <div class="wrapper" style="display: none">
             <!-- Start Header -->
             <header>
                 <div class="header-part header-reduce sticky">
@@ -2069,7 +2069,7 @@
             <footer>
                 <div class="footer-part wow fadeInDown" data-wow-delay="300ms" data-wow-duration="1000ms">
                     <div class="icon-default icon-dark">
-                        <img alt="" src="img/preview/footer-logo.png">
+                        <img alt="" src="img/logo.png" width="120" height="120">
                         </img>
                     </div>
                     <div class="container">
