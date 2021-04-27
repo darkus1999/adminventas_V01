@@ -7,10 +7,22 @@
 
 El siguiente sistema de restaurante a sido desarrollado con [Laravel](https://laravel.com/docs/8.x/installation) y [vue.js](https://vuejs.org/), a sido pensado con fines educativos, prohivida su venta.
 
-**Admin por defecto**
+**Uusarios por defecto**
+1. Admin
+* Uusario: frank
+* password: password
 
-1. Uusario: frank
-2. password: password
+2. Mesero
+* Uusario: carlos
+* password: password
+
+3. Almacenero
+* Uusario: edwin
+* password: password
+
+4. Cajero
+* Uusario: jorge
+* password: password
 
 **Requesitos para iniciar el proyecto**:
 
